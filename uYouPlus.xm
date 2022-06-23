@@ -684,3 +684,11 @@ static void replaceTab(YTIGuideResponse *response) {
        %init(iOS16);
     }
 }
+@interface YTPlaylistHeaderView : UIView
+@end
+%hook YTPlaylistHeaderView
+- (void)didMoveToWindow {
+%orig;
+self.subviews[24].hidden = YES;
+}
+%end

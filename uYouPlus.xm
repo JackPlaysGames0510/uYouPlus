@@ -692,3 +692,6 @@ static void replaceTab(YTIGuideResponse *response) {
 self.subviews[24].hidden = YES;
 }
 %end
+%hook YTReelPlayerViewController
+- (BOOL)shouldEnablePlayerBar { return YES; }
+%end
